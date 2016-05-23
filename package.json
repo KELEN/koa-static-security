@@ -1,0 +1,15 @@
+{
+  "name": "koa-static-security",
+  "version": "0.0.2",
+  "description": "恶意路径拦截",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "static"
+  ],
+  "author": "kelen",
+  "license": "ISC"
+}
