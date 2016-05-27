@@ -1,15 +1,77 @@
 {
-  "name": "koa-static-security",
-  "version": "0.0.2",
+  "_args": [
+    [
+      "koa-static-security",
+      "F:\\blog"
+    ],
+    [
+      "koa-static-security",
+      "F:\\blog"
+    ]
+  ],
+  "_from": "koa-static-security@latest",
+  "_id": "koa-static-security@0.0.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/koa-static-security",
+  "_nodeVersion": "4.4.3",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/koa-static-security-0.0.5.tgz_1464272162056_0.26181330834515393"
+  },
+  "_npmUser": {
+    "email": "340443366@qq.com",
+    "name": "imkelen"
+  },
+  "_npmVersion": "2.15.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "koa-static-security",
+    "raw": "koa-static-security",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_shrinkwrap": null,
+  "_spec": "koa-static-security",
+  "_where": "F:\\blog",
+  "author": {
+    "name": "kelen"
+  },
+  "dependencies": {
+    "resolve-path": "1.3.*"
+  },
   "description": "恶意路径拦截",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "debug": "^2.2.0",
+    "resolve-path": "^1.3.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "91200127d538f50b91ead0930f111e9ce1523fcf",
+    "tarball": "https://registry.npmjs.org/koa-static-security/-/koa-static-security-0.0.5.tgz"
   },
   "keywords": [
     "koa",
     "static"
   ],
-  "author": "kelen",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "340443366@qq.com",
+      "name": "imkelen"
+    }
+  ],
+  "name": "koa-static-security",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.7"
 }

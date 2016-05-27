@@ -6,6 +6,7 @@ var debug = require('debug')('koa-better-static:send');
 var assert = require('assert');
 var extname = require('path').extname;
 var fs = require('fs');
+var PassThrough = require('stream').PassThrough;
 
 /**
  * Expose `send()`.
@@ -33,6 +34,15 @@ function stat(path) {
       resolve(data);
     })
   });
+}
+
+function readFile(path) {
+    return new Promise(function (resolve, reject) {
+            fs.readFile(path, function (err,  data) {
+                if (err) return reject(err);
+                resolve(data);
+            })
+    });
 }
 
 
@@ -96,7 +106,7 @@ function* send(ctx, path, opts) {
 
       if (ms && Math.floor(ms/1000) === Math.floor(stats.mtime.getTime()/1000)) {
         ctx.status = 304; // not modified
-        return path;
+        return path;i
       }
     }
 
@@ -104,8 +114,17 @@ function* send(ctx, path, opts) {
     ctx.set('Last-Modified', stats.mtime.toUTCString());
     ctx.set('Content-Length', stats.size);
     ctx.type = extname(path);
-    ctx.body = fs.createReadStream(path);
 
+    var socket = ctx.req.socket;
+    if (socket.readable && socket.writable) {
+        ctx.body = yield readFile(path);
+        ctx.req.once('close', function () {
+            ctx.res.end();
+        });
+        ctx.req.once('error', function () {
+            ctx.res.end();
+        })
+    }
     return path;
 }
 
